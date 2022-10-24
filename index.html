@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intersection-Observer</title>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      ul {
+        padding-left: 0;
+        margin: 0;
+      }
+
+      ul li {
+        background-color: pink;
+
+        list-style: none;
+        text-align: center;
+        color: #fff;
+        font-size: 100px;
+        padding: 100px 0;
+      }
+
+      /* 짝수, 홀수 색상 구분하기 위해 */
+      li:nth-child(2n) {
+        background-color: skyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+  </body>
+  <script src="index.js"></script>
+</html>
