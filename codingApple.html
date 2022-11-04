@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: black;
+        height: 6000px;
+      }
+      div {
+        margin-top: 1000px;
+        color: white;
+        text-align: center;
+        opacity: 0;
+        transition: all 1s;
+        transform: rotate(-720deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, rerum.
+        Reprehenderit neque cupiditate dicta voluptatem facere, cumque quaerat
+        expedita officia similique quasi debitis, iusto id dignissimos omnis
+        fugit aperiam minus?
+      </h1>
+    </div>
+    <div>
+      <h1>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore
+        praesentium animi autem sit deleniti ratione amet ut ullam dolor quasi,
+        repudiandae suscipit quidem vitae quas! Reprehenderit explicabo vero
+        temporibus illum.
+      </h1>
+    </div>
+    <div>
+      <h1>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque ad
+        voluptatem, laudantium fuga ducimus accusamus laboriosam quis adipisci
+        voluptates numquam vel et nobis quam consequuntur a at tempora veniam
+        possimus!
+      </h1>
+    </div>
+    <div>
+      <h1>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis ex
+        ipsum totam ratione vitae expedita officiis, fugiat facilis dolorum
+        magni iure, incidunt beatae voluptates illum praesentium sit minus rem
+        mollitia.
+      </h1>
+    </div>
+    <script>
+      let observer = new IntersectionObserver((e) => {
+        console.log(e);
+        e.forEach((element) => {
+          if (element.isIntersecting) {
+            element.target.style.opacity = 1;
+            element.target.style.transform = "rotate(0deg)";
+            console.log(element.intersectionRatio);
+          } else {
+            element.target.style.opacity = 0;
+          }
+        });
+      });
+      let divs = document.querySelectorAll("div");
+      observer.observe(divs[0]);
+      observer.observe(divs[1]);
+      observer.observe(divs[2]);
+      observer.observe(divs[3]);
+      console.log(observer);
+    </script>
+  </body>
+</html>
